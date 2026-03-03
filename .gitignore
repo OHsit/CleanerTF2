@@ -1,4 +1,2 @@
-# TF2 general mod gitignore
-sound/sound.cache
-
-# CleanTF2++ gitignore
+cfg/directories_debug.json
+cfg/directories.json
