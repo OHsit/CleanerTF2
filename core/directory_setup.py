@@ -5,7 +5,7 @@ import os
 import sys
 import json
 import re
-from core.json_util import Save_data
+from json_util import Save_data
 
 def getSteamPath():
      """Return default Steam installation paths for Windows/Mac/Linux."""
@@ -31,7 +31,7 @@ def prase_libraryvdf(path):
           text = f.read
       
     #/SteamLibrary matches
-     matches = re.findall(r'"\d+"\s*"([^"]+)"', text)
+     matches = re.findall(r'"\d+"\s*"([^"]+)"', str(text))
 
      for m in matches:
           if os.path.isdir(m):
@@ -76,3 +76,6 @@ def findTF2_json():
             "libraries_checked": libraries
         }
            Save_data(tf2pathnotfound) 
+
+if __name__ == "__main__":
+    findTF2_json()
